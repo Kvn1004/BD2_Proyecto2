@@ -1,7 +1,6 @@
 USE Master;
 
 CREATE DATABASE BD2;
-
 USE BD2;
 
 CREATE TABLE Category (
