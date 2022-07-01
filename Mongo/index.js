@@ -1,6 +1,6 @@
 //const { connectMongo } = require('./connections/mongo');
 const connectsqlserver  = require('./connections/conSqlServer')
-//var cron = require('node-cron');
+var cron = require('node-cron');
 const Actualizar = require('./controller/createQuery')
 const dotenv = require('dotenv');
 const express = require('express');
@@ -41,14 +41,17 @@ async function main(){
     var connectsqlserver = new sql(config);  
     connectsqlserver.on('connect', function(err) {  
         // If no error, then good to proceed.
-        console.log("Connected");
+        console.log("Connected netflix");
     });
     
-    //cron.schedule('*/15 * * * * *', () => {
-    //    console.log(new Date().toLocaleString());
-    //})
+    //*-: * * * * * * -:cada segundo
+    //*-: */nn * * * * -: cada n minutos
+    cron.schedule('*/15 * * * *', () => {
+        console.log(new Date().toLocaleString());
+        Actualizar();
+    })
 
-    Actualizar();
+
 
 }
 

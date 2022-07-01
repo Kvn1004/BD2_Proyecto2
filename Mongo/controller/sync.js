@@ -12,15 +12,15 @@ async function consultaNetflix(){
 }
 
 async function consultaIMDB(id_imdb){
-    /*
+   console.log(id_imdb)
     await sqlserver.connect(config);
     //*Rating de IMDB
-    const resultado = await sqlserver.query(`select T.idTitle, T.id, T.primaryTitle, T.starYear, T.runtime, R.averageRating as Rating
-    from Title T inner join [10.0.0.5].IMDB.dbo.Rating R on T.id = R.titleId;`)
+    const resultado = await sqlserver.query(`SELECT T.idTitle, T.id, T.primaryTitle, T.startYear, T.runtime, R.averageRating AS Rating FROM Title T
+    INNER JOIN [34.125.9.143].BD2.dbo.Rating R ON
+    T.id = R.titleId;`)
     //*Devolver el set de Peliculas
-    */
-    //return resultado.recordset;
-    return 'HOla mundo'
+
+    return resultado.recordset;
 }
 
 module.exports = {consultaNetflix, consultaIMDB};
