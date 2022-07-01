@@ -2,7 +2,7 @@ const config = {
     user: 'sa',
     password: 'Bases21234.',
     database: 'BD2',
-    server: '34.125.28.117',
+    server: 'localhost',
     encrypt: false,
     options: {
         trustServerCertificate: true,
